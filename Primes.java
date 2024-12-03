@@ -18,7 +18,7 @@ public class Primes {
         System.out.println("Prime numbers up to " + n + ":");
         for (int i = 0; i < isPrime.length; i++) {
             if (isPrime[i]) {
-                System.err.println(i);
+                System.out.println(i);
                 count++;
             }
         }
