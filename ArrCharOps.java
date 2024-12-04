@@ -120,9 +120,10 @@ public class ArrCharOps {
      * characters containing the characters "urge".
      */
     public static char[] subArray(char[] arr, int beginIndex, int endIndex) {
-
+        // Validate indices
         if (beginIndex < 0 || endIndex > arr.length || beginIndex > endIndex) {
-            throw new IllegalArgumentException("Invalid indices");
+            System.out.println("Invalid indices provided for subArray.");
+            return new char[0]; // Return an empty array
         }
 
         char[] ret = new char[endIndex - beginIndex]; // Exclude endIndex
