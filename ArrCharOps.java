@@ -120,10 +120,15 @@ public class ArrCharOps {
      * characters containing the characters "urge".
      */
     public static char[] subArray(char[] arr, int beginIndex, int endIndex) {
-        char[] ret = new char[endIndex - beginIndex + 1];
-        for (int i = 0; i < ret.length; i++)
-            ret[i] = arr[i + beginIndex];
 
+        if (beginIndex < 0 || endIndex > arr.length || beginIndex > endIndex) {
+            throw new IllegalArgumentException("Invalid indices");
+        }
+
+        char[] ret = new char[endIndex - beginIndex]; // Exclude endIndex
+        for (int i = 0; i < ret.length; i++) {
+            ret[i] = arr[i + beginIndex];
+        }
         return ret;
     }
 
