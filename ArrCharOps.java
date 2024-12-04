@@ -120,16 +120,11 @@ public class ArrCharOps {
      * characters containing the characters "urge".
      */
     public static char[] subArray(char[] arr, int beginIndex, int endIndex) {
-        // Validate indices
-        if (beginIndex < 0 || endIndex > arr.length || beginIndex > endIndex) {
-            System.out.println("Invalid indices provided for subArray.");
-            return new char[0]; // Return an empty array
-        }
+        char[] ret = new char[endIndex - beginIndex + 1];
 
-        char[] ret = new char[endIndex - beginIndex]; // Exclude endIndex
-        for (int i = 0; i < ret.length; i++) {
+        for (int i = 0; i < ret.length; i++)
             ret[i] = arr[i + beginIndex];
-        }
+
         return ret;
     }
 
@@ -184,8 +179,7 @@ public class ArrCharOps {
      */
     public static int compareTo(String str1, String str2) {
         // Handle invalid inputs (e.g., null strings)
-        if (str1 == null || str2 == null) {
-            System.out.println("One or both strings are null.");
+        if (str1 == "" || str2 == "") {
             return -2; // Special value indicating an error
         }
 
